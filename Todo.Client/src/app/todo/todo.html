@@ -1,0 +1,13 @@
+<h2>My TODOs</h2>
+
+<div class="add">
+  <input [ngModel]="newItem()" (ngModelChange)="newItem.set($event)" placeholder="Add todo">
+  <button (click)="add()">Add</button>
+</div>
+
+<ul>
+  <li *ngFor="let item of items(); let i = index">
+    {{ item }}
+    <button (click)="delete(i)">Delete</button>
+  </li>
+</ul>
