@@ -1,7 +1,7 @@
 using System;
-using TodoApi.Models;
+using Todo.Api.Models;
 
-namespace TodoApi.Dtos;
+namespace Todo.Api.Dtos;
 
 public record TodoItemDto(
         Guid Id,

@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using TodoApi.Models;
+using Todo.Api.Models;
 
-namespace TodoApi.Services;
+namespace Todo.Api.Services;
 
 public interface ITodoService
 {

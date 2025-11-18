@@ -1,4 +1,4 @@
-﻿namespace TodoApi.Services;
+﻿namespace Todo.Api.Services;
 
 public interface IUserContext
 {

@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using TodoApi.Dtos;
-using TodoApi.Services;
+using Todo.Api.Dtos;
+using Todo.Api.Services;
 
-namespace TodoApi.Controllers;
+namespace Todo.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
