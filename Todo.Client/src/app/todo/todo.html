@@ -1,16 +1,29 @@
-<h2>My TODOs</h2>
+<div class="todo-container">
+  <h2>Todo List</h2>
 
-<div class="add">
-  <input [ngModel]="newItem()" (ngModelChange)="newItem.set($event)" placeholder="Add todo">
-  <button (click)="add()">Add</button>
-</div>
+  <div class="todo-input-row">
+    <input
+      [ngModel]="newItem()"
+      (ngModelChange)="newItem.set($event)"
+      (keyup.enter)="add()"
+      placeholder="Add new task..."
+    />
+    <button (click)="add()">Add</button>
+  </div>
 
-<ul>
   @for (item of items(); track item.id) {
-    <li>  {{ item }}
-    <input type="checkbox" [checked]="item.isDone" (change)="markDone(item.id)">  {{ item.title }}
-      Created At: {{ item.createdAt | date:'short' }} | Updated At: {{ item.updatedAt | date:'short' }}   
-    <button (click)="delete(item.id)">Delete</button>
-    </li>
+    <div class="todo-item">
+      <div class="todo-item-header">
+        <div class="todo-title">{{ item.title }}</div>
+        <button class="delete-btn" (click)="delete(item.id)">Delete</button>
+      </div>
+
+      <div class="todo-meta">
+        Created: {{ item.createdAt | date:'MMM d, h:mm a' }}
+        @if (isValidUpdatedDate(item)) {
+          • Updated: {{ item.updatedAt | date:'MMM d, h:mm a' }}
+        }
+      </div>
+    </div>
   }
-</ul>
+</div>

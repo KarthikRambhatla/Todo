@@ -48,4 +48,11 @@ export class TodoComponent implements OnInit {
       );
     });
   }
-}
+
+  isValidUpdatedDate(item: TodoItem): boolean {
+  if (!item.updatedAt) return false;
+
+  const minValid = new Date(1900, 0, 1);   // Jan 1, 1900
+  return new Date(item.updatedAt) > minValid &&
+         item.updatedAt !== item.createdAt;
+}}

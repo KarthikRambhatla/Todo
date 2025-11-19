@@ -1,3 +1,69 @@
-.add { margin-bottom: 12px; }
-ul { list-style: none; padding-left: 0; }
-li { display: flex; justify-content: space-between; padding: 4px 0; }
+.todo-container {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.todo-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.todo-input-row input {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.todo-input-row button {
+  padding: 8px 14px;
+}
+
+.todo-item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #fafafa;
+}
+
+.todo-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.todo-title.done {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.todo-meta {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.delete-btn {
+  background: #eee;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #ddd;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #777;
+}

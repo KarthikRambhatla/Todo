@@ -1,0 +1,12 @@
+.app-root {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #f3f6fa;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.app-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
