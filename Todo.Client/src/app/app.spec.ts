@@ -1,10 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
+import { TodoService } from './todo/todo.service';
+import { of } from 'rxjs';
+import { TodoComponent } from './todo/todo';
 
 describe('App', () => {
+  let todoServiceSpy: jasmine.SpyObj<TodoService>;
+
   beforeEach(async () => {
+    todoServiceSpy = jasmine.createSpyObj('TodoService', ['getAll']);
+    todoServiceSpy.getAll.and.returnValue(of([]));
+
     await TestBed.configureTestingModule({
-      imports: [App],
+      imports: [
+        App,
+        TodoComponent,
+      ],
+      providers: [
+        { provide: TodoService, useValue: todoServiceSpy }
+      ]
     }).compileComponents();
   });
 
@@ -18,6 +32,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, todo');
+    expect(compiled.textContent).toContain('Todo List');
   });
 });
