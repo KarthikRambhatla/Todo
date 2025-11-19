@@ -6,8 +6,11 @@
 </div>
 
 <ul>
-  <li *ngFor="let item of items(); let i = index">
-    {{ item }}
-    <button (click)="delete(i)">Delete</button>
-  </li>
+  @for (item of items(); track item.id) {
+    <li>  {{ item }}
+    <input type="checkbox" [checked]="item.isDone" (change)="markDone(item.id)">  {{ item.title }}
+      Created At: {{ item.createdAt | date:'short' }} | Updated At: {{ item.updatedAt | date:'short' }}   
+    <button (click)="delete(item.id)">Delete</button>
+    </li>
+  }
 </ul>
