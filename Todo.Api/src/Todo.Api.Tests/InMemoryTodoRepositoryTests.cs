@@ -137,15 +137,18 @@ public class InMemoryTodoRepositoryTests
         var OwnerId2 = "Developer-2";
         var item1 = new TodoItem { Title = "Write Unit Tests", OwnerId = OwnerId1 };
         var item2 = new TodoItem { Title = "Update ReadMe", OwnerId = OwnerId2 };
-        var item3 = new TodoItem { Title = "Implement Exceptions", OwnerId = OwnerId2 };
 
         await underTest.AddAsync(item1);
         await underTest.AddAsync(item2);
-        await underTest.AddAsync(item3);
 
-        item2.Title = "Update ReadMe File";
-        item2.OwnerId = item1.OwnerId;
-        var result = await underTest.UpdateAsync(item2);
+        var updatedItem2 = new TodoItem
+        {
+            Id = item2.Id,
+            Title = "Update ReadMe File",
+            OwnerId = item1.OwnerId 
+        };
+
+        var result = await underTest.UpdateAsync(updatedItem2);
 
         //TODO: Ideally we should throw exception Forbidden Operation
         Assert.That(result, Is.Null);
