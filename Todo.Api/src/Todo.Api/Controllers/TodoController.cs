@@ -45,7 +45,7 @@ public class TodoController(ITodoService service) : ControllerBase
             return BadRequest("Could not create todo item");
         }
             
-        return CreatedAtAction(nameof(Get), new { id = item?.Id }, TodoItemDto.From(item));
+        return CreatedAtAction(nameof(Get), new { id = item?.Id }, TodoItemDto.From(item!));
     }
 
     [HttpDelete("{id}")]
