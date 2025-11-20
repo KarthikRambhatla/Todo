@@ -1,5 +1,17 @@
 # Todo
 
+###  Pre-requisites:
+``` 
+- node installed (v24.11.1)
+- npm installed (11.6.2)
+- Angular CLI (@angular/cli@20.3.10) installed globally (`npm install -g @angular/cli`)
+```
+
+*Useful links*:
+- [Instructions for different OS](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Download Node (MacOS, Windows)](https://nodejs.org/en/download/)
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
 
 ## Development server
