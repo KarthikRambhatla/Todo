@@ -11,9 +11,22 @@ dotnet build
 - CORS is enabled for http://localhost:4200 in development.
 
 
-## TODO
-- write unit tests
-- may be some domain exception like ForbiddenOperation, ItemDoesNotExist
-- Exception Middleware
-- Check If cookie is working properly (Add More logs)
-- cross user mark done?
+## TODO API
+
+This API exposes end points 
+
+GET
+/api/Todo
+
+POST
+/api/Todo
+`{"Title":"Todo Task Title"}`
+
+GET
+/api/Todo/{id}
+
+DELETE
+/api/Todo/{id}
+
+PATCH
+/api/Todo/{id}/done 
