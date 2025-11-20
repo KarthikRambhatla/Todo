@@ -2,7 +2,7 @@
 
 This repo contains a simple TODO app:
 - Backend: .NET 10 Web API (in-memory data)
-- Frontend: Angular (minimal scaffold)
+- Frontend: Angular 20
 
 ## Requirements:
 ```
